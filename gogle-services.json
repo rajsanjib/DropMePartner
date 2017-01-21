@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "415348934866",
+    "firebase_url": "https://drive-me-7ee25.firebaseio.com",
+    "project_id": "drive-me-7ee25",
+    "storage_bucket": "drive-me-7ee25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415348934866:android:968cf1b6a54eec95",
+        "android_client_info": {
+          "package_name": "com.rsanjib.example.dropme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415348934866-sr9hv1rid1pq7vl4hmhhradohbg3iejd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXgDlUj0D6V2kDiSFTxGqJpJ9Myp7pGqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
