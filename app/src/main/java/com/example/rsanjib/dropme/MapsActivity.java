@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private static final Integer SIGN_IN_REQUEST_CODE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String value = intent.getStringExtra("key");
 
         setContentView(R.layout.activity_maps);
+
+
+
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -49,4 +55,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(ku).title("Marker in ku"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(ku));
     }
+
+
 }

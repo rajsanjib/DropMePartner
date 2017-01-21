@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Dropme</string>
     <string name="title_activity_maps">Map</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="hint_email">email@domain.com</string>
+    <string name="hint_password">Password</string>
+    <string name="loading">Loading</string>
+
+    <string name="id_fmt">User ID: %s</string>
+    <string name="email_fmt">Email: %s</string>
 </resources>
