@@ -3,13 +3,16 @@ package com.example.rsanjib.dropme;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -55,8 +58,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in KU and move the camera
         LatLng client = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(client).title("Your Marker"));
+        Marker m1 = googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(27.622093, 85.552056))
+                .anchor(0.5f, 0.5f)
+                .title("Waiting a ride")
+                .snippet("Mahesh"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(client));
         mMap.setMinZoomPreference(15.0f);
 
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+
+                try {
+
+                    Intent mapIntent = new Intent(MapsActivity.this, ChooseUser.class);
+                    MapsActivity.this.startActivity(mapIntent);
+
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    Log.e("ArrayIndexOutOfBounds", " Occured");
+                }
+
+            }
+        });
+
     }
+
 }

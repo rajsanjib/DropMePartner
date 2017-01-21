@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Invoke Map Activity
                 Intent mapIntent = new Intent(MainActivity.this, AnonymousAuthActivity.class);
-                mapIntent.putExtra("key", 1);
                 MainActivity.this.startActivity(mapIntent);
             }
         });
