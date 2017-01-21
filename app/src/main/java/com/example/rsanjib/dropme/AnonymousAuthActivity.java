@@ -16,6 +16,7 @@
 
 package com.example.rsanjib.dropme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -69,6 +70,7 @@ public class AnonymousAuthActivity extends BaseActivity implements
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    redirect();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -231,5 +233,12 @@ public class AnonymousAuthActivity extends BaseActivity implements
         } else if (i == R.id.button_link_account) {
             linkAccount();
         }
+    }
+
+    private void redirect(){
+        Intent mapIntent = new Intent(AnonymousAuthActivity.this, MapsActivity.class);
+        mapIntent.putExtra("longitude", new Double(27.620595));
+        mapIntent.putExtra("latitude",  new Double(85.553172));
+        AnonymousAuthActivity.this.startActivity(mapIntent);
     }
 }

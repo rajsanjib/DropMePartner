@@ -14,20 +14,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private static final Integer SIGN_IN_REQUEST_CODE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Respond to Intent
-        Intent intent = getIntent();
-        String value = intent.getStringExtra("key");
-
         setContentView(R.layout.activity_maps);
-
-
-
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -50,11 +42,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
+        // Get request gps location
+
+
+        //Respond to Intent
+        Intent intent = getIntent();
+        // Get data via the key
+        Double longitude = intent.getDoubleExtra("latitude", 100);
+        Double latitude = intent.getDoubleExtra("longitude", -100);
+
         // Add a marker in KU and move the camera
-        LatLng ku = new LatLng(27.6196, 85.5386);
-        mMap.addMarker(new MarkerOptions().position(ku).title("Marker in ku"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(ku));
+        LatLng client = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(client).title("Your Marker"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(client));
+        mMap.setMinZoomPreference(15.0f);
+
     }
-
-
 }
