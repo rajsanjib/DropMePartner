@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DropDb extends SQLiteOpenHelper {
+public class BookingsDb extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "dropMe.db";
     public static final String DBASE_TABLE_NAME = "bookings";
@@ -21,7 +21,7 @@ public class DropDb extends SQLiteOpenHelper {
     public static final String DBASE_COLUMN_DEST_LONGITUDE = "dest_longitude";
     private HashMap hp;
 
-    public DropDb(Context context) {
+    public BookingsDb(Context context) {
         super(context, DATABASE_NAME , null, 1);
     }
 
